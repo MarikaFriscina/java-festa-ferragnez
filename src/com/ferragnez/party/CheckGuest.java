@@ -8,14 +8,14 @@ public class CheckGuest {
 		String[] invitati={"Dua Lipa", "Paris Hilton", "Manuel Agnelli", "J-Ax", "Francesco Totti", "Ilary Blasi", "Bebe Vio", "Luis", "Pardis Zarei", "Martina Maccherone", "Rachel Zeilic"};
 		
 		String nome;
-		boolean flag=false;
+		//boolean flag=false;
 		
 		Scanner scan= new Scanner(System.in);
 		System.out.println("Come ti chiami?");
 		nome=scan.nextLine();
 		
 		
-		for(int i=0;i<invitati.length;i++) {
+		/*for(int i=0;i<invitati.length;i++) {
 			
 			if(nome.equalsIgnoreCase(invitati[i])) {
 				
@@ -28,8 +28,29 @@ public class CheckGuest {
 			System.out.println("Puoi entrare!");
 		}else {
 			System.out.println("Non sei invitato!");
+		}*/
+		
+		int i=0;
+		boolean flag=false;
+		
+		while( flag==false && i<invitati.length) {
+			
+			if(invitati[i].equalsIgnoreCase(nome)) {
+				System.out.println("Puoi entrare!");
+				flag=true;
+				
+			}else {
+				i++;
+			}
+			
 		}
 		
+		if(flag==false) {
+			System.out.println("Non sei invitato!");
+			
+		}
+		
+				
 		scan.close();
 
 	}
